@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './Components.scss';
 
-export interface Props {
+interface Props {
   label: string;
   selected: boolean;  
   onClick: () => void;
