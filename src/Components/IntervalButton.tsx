@@ -11,6 +11,7 @@ export const IntervalButton: React.FC<Props> = (p) => (
   <div 
     className={`interval-button ${p.selected ? 'interval-button--selected' : ''}`}
     onClick={p.onClick}
+    key={p.label}
   >
      {p.label}
   </div>

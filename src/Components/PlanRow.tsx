@@ -11,8 +11,9 @@ interface Props {
 
 export const PlanRow: React.FC<Props> = (p) => (
     <div 
-    className={`plan`}
-    onClick={p.onClick}
+        className={`plan`}
+        onClick={p.onClick}
+        key={p.plan.id}
     >
         <div className={'plan__content'}>
             <div 
