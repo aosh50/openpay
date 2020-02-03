@@ -1,0 +1,39 @@
+@import '../App.scss';
+
+.interval-button {
+    padding: 5px;
+    overflow: hidden;
+    margin-right: 16px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 150ms linear;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 600;
+    display: inline-block;
+    color: $grey-button;
+    height: 80px;
+    &::after {
+        display: block;
+    }
+    &:hover {
+        color: $selected-button;
+    }   
+
+    &.interval-button--selected {
+        color: $selected-button;
+                     
+    }
+    &.interval-button--selected:after {
+        content: ""; 
+        display: block;
+        width: 65%; 
+        height: 1px;
+        padding-top: 2px;
+        background-color: $selected-button;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-radius: 3px;
+
+    } 
+}

@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+// Variables
+$selected-button: #2864FF;
+$grey-button: #717171;
+
+html, body, .App, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.App {
+  
+  font-family: 'Poppins', sans-serif;
+  background-color: #e3f2fd;
+}
