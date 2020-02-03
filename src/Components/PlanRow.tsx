@@ -23,7 +23,7 @@ export const PlanRow: React.FC<Props> = (p) => (
             <div 
                 className={'plan__subtitle'}
             >
-                {`${p.plan.paymentCount} x ${U.PaymentAmount(p.plan.paymentCount)} · ${U.Capitalise(p.plan.interval)} · Inc. fee`}
+                {`${p.plan.paymentCount} x $${U.PaymentAmount(p.plan.paymentCount)} · ${U.Capitalise(p.plan.interval)} · Inc. fee`}
             </div>
         </div>
         <div className={'plan__detail'}>

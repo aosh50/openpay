@@ -17,3 +17,15 @@ html, body, .App, #root {
   font-family: 'Poppins', sans-serif;
   background-color: #e3f2fd;
 }
+
+.App__content {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  .App__message {
+    font-size: 1.5em;
+    font-weight: 800;
+    padding: 1.8em 0;
+  }
+  
+}
