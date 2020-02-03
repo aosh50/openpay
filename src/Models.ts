@@ -23,9 +23,9 @@ export const mapApiPlanToPlan = (a: ApiPlan): Plan => {
     }
 }
 
-export const GeneratePlan = (): ApiPlan => {
-
-    var interval = F.random.arrayElement(["weekly", "fortnightly", "monthly"]);
+export const GeneratePlan = (n: number): ApiPlan => {
+    const intervals = ["weekly", "fortnightly", "monthly"];
+    var interval = n > 3 ? F.random.arrayElement(intervals) : intervals[n]; // Ensure at least 1 of each interval
     return {
         interval: interval,
         paymentCount: F.random.number({min: 2, max: 16 }), // Limit payment counts to geneate "realistic" data

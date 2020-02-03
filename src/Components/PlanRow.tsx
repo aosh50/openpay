@@ -27,7 +27,7 @@ export const PlanRow: React.FC<Props> = (p) => (
             </div>
         </div>
         <div className={'plan__detail'}>
-            {p.plan.selected ? <Check style={{fill: 'green'}} /> : ''}
+            {p.plan.selected ? <Check style={{fill: 'green'}} className={'checkmark'} /> : ''}
         </div>
   </div>
 );

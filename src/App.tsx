@@ -13,7 +13,7 @@ const App = () => {
   React.useEffect(() => {    
     var someGeneratedPlans = [];
     for (var i = 0; i < F.random.number({min: 4, max: 15 }); i++) {
-      someGeneratedPlans.push(M.GeneratePlan());
+      someGeneratedPlans.push(M.GeneratePlan(i));
     }
     setPlans(_.map(M.mapApiPlanToPlan, someGeneratedPlans));
   }, []);
