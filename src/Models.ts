@@ -6,6 +6,7 @@ export interface Plan {
     paymentCount: number;
     selected: boolean;
     finishDate: Date;
+    id: string;
 }
 
 export interface ApiPlan {
@@ -17,7 +18,8 @@ export const mapApiPlanToPlan = (a: ApiPlan): Plan => {
     return {
         ...a,
         selected: false,
-        finishDate: U.calcFinishDate(new Date(), a.interval, a.paymentCount)
+        finishDate: U.calcFinishDate(new Date(), a.interval, a.paymentCount),
+        id: F.random.uuid() // Generate a unique identifier
     }
 }
 

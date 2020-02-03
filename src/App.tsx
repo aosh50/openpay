@@ -18,7 +18,13 @@ const App = () => {
     setPlans(_.map(M.mapApiPlanToPlan, someGeneratedPlans));
   }, []);
 
-  
+  const filteredPlans = () => {
+    return _.filter(p => p.interval === selectedInterval, plans);
+  }
+  const sortedPlans = () => {
+    return _.sortBy(p => p.paymentCount, filteredPlans());
+  }
+
   return (
     <div className="App">
 
@@ -33,26 +39,34 @@ const App = () => {
           </div>
           <C.IntervalButton
             label={'Weekly'}
-            onClick={() => {return;}}
-            selected={true}
+            onClick={() => setSelectedInterval("weekly")}
+            selected={selectedInterval === "weekly"}
           />
           <C.IntervalButton
             label={'Fortnightly'}
-            onClick={() => {return;}}
-            selected={false}
+            onClick={() => setSelectedInterval("fortnightly")}
+            selected={selectedInterval === "fortnightly"}
           />
           <C.IntervalButton
             label={'Monthly'}
-            onClick={() => {return;}}
-            selected={false}
+            onClick={() => setSelectedInterval("monthly")}
+            selected={selectedInterval === "monthly"}
           />
           
           {_.map(p => 
             <C.PlanRow
               plan={p}
-              onClick={() => {return;}}
+              onClick={() => {
+                var newPlans = _.map(plan => {
+                  return {
+                    ...plan,
+                    selected: plan.id === p.id
+                  }
+                }, plans);
+                setPlans(newPlans);
+              }}
             />
-          , plans)}
+          , sortedPlans())}
         </div>
     </div>
   );
